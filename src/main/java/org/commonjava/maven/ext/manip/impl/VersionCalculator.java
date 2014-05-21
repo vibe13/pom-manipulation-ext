@@ -38,13 +38,13 @@ import org.commonjava.maven.ext.manip.ManipulationException;
 import org.commonjava.maven.ext.manip.model.Project;
 import org.commonjava.maven.ext.manip.state.ManipulationSession;
 import org.commonjava.maven.ext.manip.state.VersioningState;
-import org.sonatype.aether.RepositorySystem;
-import org.sonatype.aether.metadata.Metadata;
-import org.sonatype.aether.metadata.Metadata.Nature;
-import org.sonatype.aether.repository.RemoteRepository;
-import org.sonatype.aether.resolution.MetadataRequest;
-import org.sonatype.aether.resolution.MetadataResult;
-import org.sonatype.aether.util.metadata.DefaultMetadata;
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.metadata.Metadata;
+import org.eclipse.aether.metadata.Metadata.Nature;
+import org.eclipse.aether.repository.RemoteRepository;
+import org.eclipse.aether.resolution.MetadataRequest;
+import org.eclipse.aether.resolution.MetadataResult;
+import org.eclipse.aether.metadata.DefaultMetadata;
 
 /**
  * Component that calculates project version modifications, based on configuration stored in {@link VersioningState}. Snapshots may/may not be

@@ -44,8 +44,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.sonatype.aether.RepositorySystem;
-import org.sonatype.aether.util.DefaultRepositorySystemSession;
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.DefaultRepositorySystemSession;
 
 public class VersioningCalculatorTest
 {

@@ -15,40 +15,40 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.sonatype.aether.RepositorySystem;
-import org.sonatype.aether.RepositorySystemSession;
-import org.sonatype.aether.SyncContext;
-import org.sonatype.aether.collection.CollectRequest;
-import org.sonatype.aether.collection.CollectResult;
-import org.sonatype.aether.collection.DependencyCollectionException;
-import org.sonatype.aether.deployment.DeployRequest;
-import org.sonatype.aether.deployment.DeployResult;
-import org.sonatype.aether.deployment.DeploymentException;
-import org.sonatype.aether.graph.DependencyFilter;
-import org.sonatype.aether.graph.DependencyNode;
-import org.sonatype.aether.installation.InstallRequest;
-import org.sonatype.aether.installation.InstallResult;
-import org.sonatype.aether.installation.InstallationException;
-import org.sonatype.aether.metadata.Metadata;
-import org.sonatype.aether.repository.LocalRepository;
-import org.sonatype.aether.repository.LocalRepositoryManager;
-import org.sonatype.aether.resolution.ArtifactDescriptorException;
-import org.sonatype.aether.resolution.ArtifactDescriptorRequest;
-import org.sonatype.aether.resolution.ArtifactDescriptorResult;
-import org.sonatype.aether.resolution.ArtifactRequest;
-import org.sonatype.aether.resolution.ArtifactResolutionException;
-import org.sonatype.aether.resolution.ArtifactResult;
-import org.sonatype.aether.resolution.DependencyRequest;
-import org.sonatype.aether.resolution.DependencyResolutionException;
-import org.sonatype.aether.resolution.DependencyResult;
-import org.sonatype.aether.resolution.MetadataRequest;
-import org.sonatype.aether.resolution.MetadataResult;
-import org.sonatype.aether.resolution.VersionRangeRequest;
-import org.sonatype.aether.resolution.VersionRangeResolutionException;
-import org.sonatype.aether.resolution.VersionRangeResult;
-import org.sonatype.aether.resolution.VersionRequest;
-import org.sonatype.aether.resolution.VersionResolutionException;
-import org.sonatype.aether.resolution.VersionResult;
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.RepositorySystemSession;
+import org.eclipse.aether.SyncContext;
+import org.eclipse.aether.collection.CollectRequest;
+import org.eclipse.aether.collection.CollectResult;
+import org.eclipse.aether.collection.DependencyCollectionException;
+import org.eclipse.aether.deployment.DeployRequest;
+import org.eclipse.aether.deployment.DeployResult;
+import org.eclipse.aether.deployment.DeploymentException;
+import org.eclipse.aether.graph.DependencyFilter;
+import org.eclipse.aether.graph.DependencyNode;
+import org.eclipse.aether.installation.InstallRequest;
+import org.eclipse.aether.installation.InstallResult;
+import org.eclipse.aether.installation.InstallationException;
+import org.eclipse.aether.metadata.Metadata;
+import org.eclipse.aether.repository.LocalRepository;
+import org.eclipse.aether.repository.LocalRepositoryManager;
+import org.eclipse.aether.resolution.ArtifactDescriptorException;
+import org.eclipse.aether.resolution.ArtifactDescriptorRequest;
+import org.eclipse.aether.resolution.ArtifactDescriptorResult;
+import org.eclipse.aether.resolution.ArtifactRequest;
+import org.eclipse.aether.resolution.ArtifactResolutionException;
+import org.eclipse.aether.resolution.ArtifactResult;
+import org.eclipse.aether.resolution.DependencyRequest;
+import org.eclipse.aether.resolution.DependencyResolutionException;
+import org.eclipse.aether.resolution.DependencyResult;
+import org.eclipse.aether.resolution.MetadataRequest;
+import org.eclipse.aether.resolution.MetadataResult;
+import org.eclipse.aether.resolution.VersionRangeRequest;
+import org.eclipse.aether.resolution.VersionRangeResolutionException;
+import org.eclipse.aether.resolution.VersionRangeResult;
+import org.eclipse.aether.resolution.VersionRequest;
+import org.eclipse.aether.resolution.VersionResolutionException;
+import org.eclipse.aether.resolution.VersionResult;
 
 public class StubRepositorySystem
     implements RepositorySystem
@@ -93,26 +93,6 @@ public class StubRepositorySystem
     @Override
     public DependencyResult resolveDependencies( final RepositorySystemSession session, final DependencyRequest request )
         throws DependencyResolutionException
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    @Deprecated
-    public List<ArtifactResult> resolveDependencies( final RepositorySystemSession session, final DependencyNode node,
-                                                     final DependencyFilter filter )
-        throws ArtifactResolutionException
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    @Deprecated
-    public List<ArtifactResult> resolveDependencies( final RepositorySystemSession session,
-                                                     final CollectRequest request, final DependencyFilter filter )
-        throws DependencyCollectionException, ArtifactResolutionException
     {
         // TODO Auto-generated method stub
         return null;
@@ -174,14 +154,15 @@ public class StubRepositorySystem
     }
 
     @Override
-    public LocalRepositoryManager newLocalRepositoryManager( final LocalRepository localRepository )
+    public SyncContext newSyncContext( final RepositorySystemSession session, final boolean shared )
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SyncContext newSyncContext( final RepositorySystemSession session, final boolean shared )
+    public LocalRepositoryManager newLocalRepositoryManager( RepositorySystemSession session,
+                                                             LocalRepository localRepository )
     {
         // TODO Auto-generated method stub
         return null;
