@@ -66,7 +66,8 @@ public class HttpMessageTranslatorTest
         LoggerFactory.getLogger( HttpMessageTranslatorTest.class ).info ( "Executing test " + testName.getMethodName());
 
         this.versionTranslator = new DefaultTranslator( mockServer.getUrl(), RestProtocol.CURRENT, 0,
-                                                        Translator.CHUNK_SPLIT_COUNT, "", "" );
+                                                        Translator.CHUNK_SPLIT_COUNT, "", "", DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC, 
+                                                        DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC, DefaultTranslator.RETRY_DURATION_SEC );
     }
 
     @Test

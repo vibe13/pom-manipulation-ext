@@ -80,7 +80,8 @@ public class HandleServiceUnavailableTest
 
         handler.setStatusCode( HttpServletResponse.SC_SERVICE_UNAVAILABLE );
         versionTranslator = new DefaultTranslator( mockServer.getUrl(), protocol, 0, Translator.CHUNK_SPLIT_COUNT,
-                                                   "", "" );
+                                                   "", "", DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC, 
+                                                   DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC, DefaultTranslator.RETRY_DURATION_SEC );
     }
 
     public HandleServiceUnavailableTest(Translator.RestProtocol protocol )

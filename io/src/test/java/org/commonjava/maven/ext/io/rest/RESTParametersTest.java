@@ -88,7 +88,8 @@ public class RESTParametersTest
     public void testVerifyGroup()
     {
         this.versionTranslator = new DefaultTranslator( mockServer.getUrl(), RestProtocol.CURRENT, 0,
-                                                        Translator.CHUNK_SPLIT_COUNT, group, "" );
+                                                        Translator.CHUNK_SPLIT_COUNT, group, "", DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC, 
+                                                        DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC, DefaultTranslator.RETRY_DURATION_SEC );
         List<ProjectVersionRef> gavs = Collections.singletonList(
             new SimpleProjectVersionRef( "com.example", "example", "1.0" ) );
 
@@ -100,7 +101,8 @@ public class RESTParametersTest
     public void testVerifyNoGroup()
     {
         this.versionTranslator = new DefaultTranslator( mockServer.getUrl(), RestProtocol.CURRENT, 0,
-                                                        Translator.CHUNK_SPLIT_COUNT, "", "" );
+                                                        Translator.CHUNK_SPLIT_COUNT, "", "", DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC, 
+                                                        DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC, DefaultTranslator.RETRY_DURATION_SEC );
         List<ProjectVersionRef> gavs = Collections.singletonList(
             new SimpleProjectVersionRef( "com.example", "example", "1.0" ) );
 

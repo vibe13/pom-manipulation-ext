@@ -58,7 +58,11 @@ public class RESTState implements State
 
         RestProtocol protocol = RestProtocol.parse ( userProps.getProperty( "restProtocol", RestProtocol.CURRENT.toString() ) );
 
-        restEndpoint = new DefaultTranslator( restURL, protocol, restMaxSize, restMinSize, repositoryGroup, vState.getIncrementalSerialSuffix() );
+        long connectionTimeout = Long.parseLong( userProps.getProperty( "connectionTimeout", String.valueOf( DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC ) ) );
+        long socketTimeout = Long.parseLong( userProps.getProperty( "socketTimeout", String.valueOf( DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC ) ) );
+        int retryTimeout = Integer.parseInt( userProps.getProperty( "retryDuration", String.valueOf( DefaultTranslator.RETRY_DURATION_SEC ) ) );
+
+        restEndpoint = new DefaultTranslator( restURL, protocol, restMaxSize, restMinSize, repositoryGroup, vState.getIncrementalSerialSuffix(), connectionTimeout, socketTimeout, retryTimeout );
     }
 
     /**

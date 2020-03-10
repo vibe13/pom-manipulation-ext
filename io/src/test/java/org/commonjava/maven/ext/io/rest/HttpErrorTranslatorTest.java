@@ -91,7 +91,8 @@ public class HttpErrorTranslatorTest
 
         this.versionTranslator = new DefaultTranslator( mockServer.getUrl(), Translator.RestProtocol.CURRENT, 0,
                                                         Translator.CHUNK_SPLIT_COUNT, "",
-                                                        "" );
+                                                        "", DefaultTranslator.DEFAULT_CONNECTION_TIMEOUT_SEC, 
+                                                        DefaultTranslator.DEFAULT_SOCKET_TIMEOUT_SEC, DefaultTranslator.RETRY_DURATION_SEC );
     }
 
     @Test
